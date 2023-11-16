@@ -1,6 +1,0 @@
-fly launch
-
-copiar Dockerfile
-copiar toml
-fly secrets set MYSQL_PASSWORD=pass MYSQL_ROOT_PASSWORD=pass
-fly deploy

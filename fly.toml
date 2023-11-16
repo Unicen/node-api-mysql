@@ -1,6 +1,7 @@
 # fly.toml file generated for broken-wildflower-4594 on 2022-11-10T20:48:03-03:00
 
-app = "broken-wildflower-4594"
+app = "icy-leaf-7322"
+primary_region = "eze"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
@@ -10,15 +11,8 @@ kill_timeout = 5
   destination="/data"
 
 [env]
-  MYSQL_DATABASE = "db_tasks"
+  MYSQL_DATABASE = "repos"
   MYSQL_USER = "web"
 
-[experimental]
-  cmd = [
-    "--default-authentication-plugin", 
-    "mysql_native_password", 
-    "--datadir", 
-    "/data/mysql",
-    "--performance-schema=OFF",
-    "--innodb-buffer-pool-size", "64M"
-  ]
+[processes]
+  app = "--datadir /data/mysql --default-authentication-plugin mysql_native_password --performance-schema=OFF --innodb-buffer-pool-size 64M"
